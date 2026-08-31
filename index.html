@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Total Automation &amp; Network Solutions | Automation, Networking &amp; IoT</title>
 <meta name="description" content="Total Automation &amp; Network Solutions (TANS) — industrial automation, networking infrastructure, and IoT-driven software platforms.">
-<link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+<link rel="icon" href="assets/logo.png" type="image/png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,7 +128,7 @@
     padding:14px 0;
   }
   .brand{ display:flex; align-items:center; gap:12px; }
-  .brand img{ width:40px; height:40px; border-radius:9px; }
+  .brand img{ width:56px; height:56px; border-radius:9px; object-fit:contain; }
   .brand-name{ font-family:var(--font-display); font-weight:700; font-size:16.5px; line-height:1.15; color:var(--ink); }
   .brand-name small{ display:block; font-family:var(--font-mono); font-weight:400; font-size:10.5px; letter-spacing:0.06em; color:var(--ink-soft); text-transform:uppercase; margin-top:2px; }
 
@@ -238,7 +238,7 @@
 
   /* ============ SERVICES ============ */
   .services-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
   }
   .service-card{
     background:var(--white);
@@ -305,6 +305,54 @@
   .dash-mock-foot{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:11px; color:#8FA5A7; margin-top:6px; }
 
   /* ============ STATS ============ */
+
+  /* ============ TRUSTED BY ============ */
+  .trusted{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    padding:36px 0;
+    overflow:hidden;
+  }
+  .trusted-label{
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--ink-soft); text-align:center; margin-bottom:22px;
+  }
+  .trusted-viewport{
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+    mask-image:linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+  }
+  .trusted-row{
+    display:flex; align-items:center; gap:48px;
+    width:max-content;
+    animation:trusted-scroll 26s linear infinite;
+  }
+  .trusted:hover .trusted-row{ animation-play-state:paused; }
+  @keyframes trusted-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  .trusted-logo{
+    width:140px; height:56px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .trusted-logo img{
+    max-width:100%; max-height:100%; object-fit:contain;
+    filter:grayscale(100%); opacity:0.7;
+    transition:filter .18s ease, opacity .18s ease;
+  }
+  .trusted-logo img:hover{
+    filter:grayscale(0%); opacity:1;
+  }
+  /* Use this modifier for logos that are white/very light on a transparent background — inverts them to dark so they're visible on the white section, without a background chip */
+  .trusted-logo--invert img{
+    filter:invert(1) grayscale(100%) opacity(0.75);
+  }
+  .trusted-logo--invert img:hover{
+    filter:invert(1) grayscale(0%) opacity(1);
+  }
+
   .stats{
     background:var(--mist);
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
@@ -347,7 +395,7 @@
     display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px;
   }
   .footer-brand{ display:flex; align-items:center; gap:10px; color:var(--white); font-family:var(--font-display); font-weight:600; font-size:14.5px; }
-  .footer-brand img{ width:26px; height:26px; border-radius:6px; }
+  .footer-brand img{ width:34px; height:34px; border-radius:6px; object-fit:cover; }
   .footer-links{ display:flex; gap:24px; font-size:13.5px; }
   .footer-links a:hover{ color:var(--white); }
   .footer-fine{ font-size:12.5px; color:#6C8082; margin-top:20px; text-align:center; }
@@ -402,6 +450,7 @@
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .btn:hover{ transform:none; }
+    .trusted-row{ animation:none; }
   }
 </style>
 </head>
@@ -411,8 +460,7 @@
 <header class="site-header">
   <div class="wrap header-row">
     <a href="#top" class="brand">
-      <img src="assets/logo.jpg" alt="TANS logo">
-      <span class="brand-name">Total Automation<br>&amp; Network Solutions<small>Automation · Networking · IoT</small></span>
+      <img src="assets/logo.png" alt="Total Automation &amp; Network Solutions logo">
     </a>
     <nav class="nav-links">
       <a href="#about">About</a>
@@ -421,8 +469,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-cta">
-      <!-- EDIT: replace 91XXXXXXXXXX with your WhatsApp business number, country code first, no + or spaces -->
-      <a class="btn btn-whatsapp" href="https://wa.me/91XXXXXXXXXX?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">
+      <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">
         WhatsApp Enquiry
       </a>
     </div>
@@ -436,7 +483,7 @@
   <a href="#services">Services</a>
   <a href="#platform">Smart Meter Platform</a>
   <a href="#contact">Contact</a>
-  <a class="btn btn-whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp Enquiry</a>
+  <a class="btn btn-whatsapp" href="https://wa.me/919254006241" target="_blank" rel="noopener">WhatsApp Enquiry</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -445,19 +492,39 @@
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <span class="eyebrow">Since 2011 — automation &amp; networking today, building smart IoT tomorrow</span>
-      <h1>We keep your machines and networks running. Now we're building the software to run them smarter.</h1>
-      <p class="lead">Total Automation &amp; Network Solutions handles industrial automation and networking for clients every day. Alongside that, we're building our own smart meter platform — currently in development, with a small team growing around it.</p>
+      <h1>We keep things running. Now, running smarter.</h1>
+      <p class="lead">Total Automation &amp; Network Solutions delivers fire alarm, CCTV, building automation and public address systems for clients every day. Alongside that, we're building our own smart meter platform — currently in development, with a small team growing around it.</p>
       <div class="hero-ctas">
-        <a class="btn btn-whatsapp" href="https://wa.me/91XXXXXXXXXX?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">WhatsApp Enquiry</a>
         <a class="btn btn-ghost" href="#platform">See what we're building &rarr;</a>
       </div>
     </div>
     <div class="hero-panel">
-      <div class="hero-panel-head"><span><span class="dot"></span>Live site telemetry — preview</span> IN DEV</div>
+      <div class="hero-panel-head"><span><span class="dot"></span>Sample telemetry — preview</span> IN DEV</div>
       <div class="telemetry-row"><span class="label">Site A — Meter 014</span><span class="value">231.4<span>kWh</span></span></div>
       <div class="telemetry-row"><span class="label">Site A — Meter 022</span><span class="value">118.9<span>kWh</span></span></div>
       <div class="telemetry-row"><span class="label">Relay status</span><span class="value">ON<span>auto</span></span></div>
       <div class="telemetry-row"><span class="label">Connected sites</span><span class="value">03<span>active</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUSTED BY ============ -->
+<section class="trusted">
+  <div class="wrap">
+    <div class="trusted-label">Trusted by teams we've worked with</div>
+    <div class="trusted-viewport">
+      <div class="trusted-row">
+        <!-- List is duplicated below for a seamless loop — keep both copies identical. -->
+        <div class="trusted-logo"><img src="assets/clients/siemens.png" alt="Siemens"></div>
+        <div class="trusted-logo trusted-logo--invert"><img src="assets/clients/lt.svg" alt="L&amp;T"></div>
+        <div class="trusted-logo"><img src="assets/clients/honeywell.png" alt="Honeywell"></div>
+        <div class="trusted-logo"><img src="assets/clients/ivl-dhunseri.png" alt="IVL Dhunseri"></div>
+        <div class="trusted-logo" aria-hidden="true"><img src="assets/clients/siemens.png" alt=""></div>
+        <div class="trusted-logo trusted-logo--invert" aria-hidden="true"><img src="assets/clients/lt.svg" alt=""></div>
+        <div class="trusted-logo" aria-hidden="true"><img src="assets/clients/honeywell.png" alt=""></div>
+        <div class="trusted-logo" aria-hidden="true"><img src="assets/clients/ivl-dhunseri.png" alt=""></div>
+      </div>
     </div>
   </div>
 </section>
@@ -477,8 +544,8 @@
       <span class="tag">What we do every day</span>
       <h3>Panels, cabling and getting it right on-site</h3>
       <ul>
-        <li>Industrial automation — panel wiring, PLC &amp; relay-based control systems</li>
-        <li>Structured networking — LAN, CCTV and access control for factories &amp; offices</li>
+        <li>Fire alarm, CCTV, public address &amp; building automation systems</li>
+        <li>Panel wiring, PLC &amp; relay-based control systems</li>
         <li>Hands-on system integration and on-site support</li>
         <li>2023: reorganised as Total Automation &amp; Network Solutions to match where we were headed</li>
       </ul>
@@ -501,7 +568,7 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" style="color:var(--maroon)">What we do</span>
-      <h2>Four disciplines, one team</h2>
+      <h2>Six disciplines, one team</h2>
       <p>From the panel on the wall to the dashboard on your phone — services we deliver today, and the platform we're building for tomorrow.</p>
     </div>
     <div class="services-grid">
@@ -510,7 +577,7 @@
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
         </div>
-        <h4>Industrial Automation</h4>
+        <h4>Building Automation</h4>
         <p>PLC &amp; relay-based control panels, process automation and on-site commissioning for plants and facilities.</p>
       </div>
       <div class="service-card">
@@ -518,24 +585,40 @@
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13l-6 4M12 13l6 4"/></svg>
         </div>
-        <h4>Networking &amp; Infrastructure</h4>
-        <p>Structured cabling, enterprise LAN/Wi-Fi, CCTV and access control systems built to scale with your site.</p>
+        <h4>Software Customization</h4>
+        <p>Custom dashboards and multi-tenant platforms built in-house — designed around how your team actually works.</p>
       </div>
       <div class="service-card">
         <div class="service-num">03</div>
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M10 21h4"/></svg>
         </div>
-        <h4>IoT Solutions</h4>
+        <h4>IoT Devices</h4>
         <p>Connected sensors and smart meters with real-time telemetry, delivered over MQTT to your dashboard.</p>
       </div>
       <div class="service-card">
         <div class="service-num">04</div>
         <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
         </div>
-        <h4>Software Solutions</h4>
-        <p>Custom dashboards and multi-tenant platforms built in-house — designed around how your team actually works.</p>
+        <h4>Fire Alarm Systems</h4>
+        <p>Detection, alarm panels and monitoring systems designed and installed to protect buildings and people.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <h4>CCTV Surveillance Systems</h4>
+        <p>Camera systems, NVR setup and remote monitoring for factories, offices and multi-site operations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </div>
+        <h4>Public Address Systems</h4>
+        <p>Announcement and paging systems for factories, campuses and public spaces, built for clear, reliable coverage.</p>
       </div>
     </div>
   </div>
@@ -556,7 +639,7 @@
         <li>Full audit trail on every action</li>
         <li>Live data over MQTT</li>
       </ul>
-      <a class="btn btn-whatsapp" href="https://wa.me/91XXXXXXXXXX?text=Hi%20TANS%2C%20I%27d%20like%20to%20join%20the%20early%20access%20list%20for%20the%20smart%20meter%20platform." target="_blank" rel="noopener">Join early access list</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20join%20the%20early%20access%20list%20for%20the%20smart%20meter%20platform." target="_blank" rel="noopener">Join early access list</a>
     </div>
     <div class="dash-mock" aria-hidden="true">
       <div class="dash-mock-head">
@@ -585,16 +668,17 @@
           <div class="dash-bar"><i style="width:99%"></i></div>
         </div>
       </div>
-      <div class="dash-mock-foot"><span>Last sync 2s ago</span><span>3 sites connected</span></div>
+      <div class="dash-mock-foot"><span>Sample data</span><span>Illustrative only</span></div>
     </div>
+    <p style="font-family:var(--font-mono); font-size:11px; color:#6C8082; text-align:center; margin-top:10px;">Mockup shown for illustration — platform is still in development.</p>
   </div>
 </section>
 
 <!-- ============ STATS ============ -->
 <section class="stats">
   <div class="wrap stats-row">
-    <div class="stat"><div class="v">2025</div><div class="l">Year we began the shift to IoT &amp; software</div></div>
-    <div class="stat"><div class="v">04</div><div class="l">Core service areas under one team</div></div>
+    <div class="stat"><div class="v">2026</div><div class="l">Year we started building our own platform</div></div>
+    <div class="stat"><div class="v">06</div><div class="l">Core service areas under one team</div></div>
     <div class="stat"><div class="v">24 hr</div><div class="l">Typical response time to an enquiry</div></div>
     <div class="stat"><div class="v">01</div><div class="l">Platform, built to run many sites</div></div>
   </div>
@@ -608,27 +692,20 @@
         <span class="eyebrow">Get in touch</span>
         <h2>Tell us what you're building</h2>
         <p>Whether it's a panel that needs wiring, a network that needs designing, or a platform you want to see a demo of — reach out and we'll get back to you.</p>
-        <a class="btn btn-whatsapp" href="https://wa.me/91XXXXXXXXXX?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">Start a WhatsApp chat</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">Start a WhatsApp chat</a>
       </div>
       <div class="contact-right">
         <div class="contact-field">
           <div class="k">Email</div>
-          <!-- EDIT: replace with your real email -->
-          <a class="v" href="mailto:info@totalautomation.example">info@totalautomation.example</a>
+          <a class="v" href="mailto:sanjaytans@gmail.com">sanjaytans@gmail.com</a>
         </div>
         <div class="contact-field">
           <div class="k">Phone</div>
-          <!-- EDIT: replace with your real phone number -->
-          <a class="v" href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
-        </div>
-        <div class="contact-field">
-          <div class="k">IndiaMART profile</div>
-          <a class="v" href="https://www.indiamart.com/totalautomation/" target="_blank" rel="noopener">indiamart.com/totalautomation</a>
+          <a class="v" href="tel:+919254006241">+91 92540 06241</a>
         </div>
         <div class="contact-field">
           <div class="k">Address</div>
-          <!-- EDIT: add your real address -->
-          <span class="v">Add your office / workshop address here</span>
+          <span class="v">519/12, Saini Colony, Panipat, Haryana - 132103, India</span>
         </div>
       </div>
     </div>
@@ -640,7 +717,7 @@
   <div class="wrap">
     <div class="footer-row">
       <a href="#top" class="footer-brand">
-        <img src="assets/logo.jpg" alt="TANS logo">
+        <img src="assets/logo.png" alt="TANS logo">
         Total Automation &amp; Network Solutions
       </a>
       <nav class="footer-links">
@@ -648,7 +725,6 @@
         <a href="#services">Services</a>
         <a href="#platform">Platform</a>
         <a href="#contact">Contact</a>
-        <a href="https://www.indiamart.com/totalautomation/" target="_blank" rel="noopener">IndiaMART</a>
       </nav>
     </div>
     <div class="footer-fine">GSTIN: XXAAAAA0000A1Z5 &nbsp;|&nbsp; Established 2011</div>
@@ -656,7 +732,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/91XXXXXXXXXX?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="wa-float" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#0B2B18"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2zm5.6 14.32c-.24.67-1.4 1.29-1.93 1.33-.5.05-1.02.24-3.42-.72-2.9-1.16-4.76-4.15-4.9-4.34-.14-.19-1.17-1.56-1.17-2.98 0-1.42.75-2.11 1.02-2.4.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.83.91-1.12.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.14.48.21.55.33.07.12.07.7-.17 1.37z"/></svg>
 </a>
 
