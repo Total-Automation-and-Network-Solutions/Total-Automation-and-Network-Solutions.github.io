@@ -108,12 +108,6 @@
     align-items:center;
     gap:10px;
   }
-  .eyebrow::before{
-    content:"";
-    width:22px; height:1px;
-    background:var(--teal);
-    display:inline-block;
-  }
   :focus-visible{ outline:2.5px solid var(--maroon); outline-offset:3px; border-radius:4px; }
 
   .btn{
@@ -170,8 +164,17 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:14px 0;
   }
-  .brand{ display:flex; align-items:center; gap:12px; margin-left:-10px; }
-  .brand img{ width:56px; height:56px; border-radius:9px; object-fit:contain; }
+  .site-header.scrolled{ box-shadow:0 8px 24px -16px rgba(14,27,33,0.35); }
+  section[id]{ scroll-margin-top:80px; }
+  .skip-link{
+    position:absolute; left:12px; top:-60px; z-index:300;
+    background:var(--navy); color:var(--white); padding:10px 16px; border-radius:8px; font-size:14px;
+  }
+  .skip-link:focus{ top:12px; }
+  .header-phone{ font-family:var(--font-mono); font-size:13px; color:var(--ink-soft); white-space:nowrap; }
+  .header-phone:hover{ color:var(--maroon); }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ width:48px; height:48px; border-radius:9px; object-fit:contain; }
   .brand-name{ font-family:var(--font-display); font-weight:700; font-size:16.5px; line-height:1.15; color:var(--ink); }
   .brand-name small{ display:block; font-family:var(--font-mono); font-weight:400; font-size:10.5px; letter-spacing:0.06em; color:var(--ink-soft); text-transform:uppercase; margin-top:2px; }
 
@@ -184,8 +187,8 @@
     content:""; position:absolute; left:0; bottom:0; width:0; height:2px;
     background:var(--maroon); transition:width .2s ease;
   }
-  .nav-links a:hover{ color:var(--ink); }
-  .nav-links a:hover::after{ width:100%; }
+  .nav-links a:hover, .nav-links a.active{ color:var(--ink); }
+  .nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
 
   .header-cta{ display:flex; align-items:center; gap:14px; }
   .header-cta .btn{ padding:10px 18px; font-size:13.5px; }
@@ -216,7 +219,6 @@
     position:absolute; inset:0; z-index:1; opacity:0.9;
   }
   .hero-copy .eyebrow{ color:#5FD4DB; }
-  .hero-copy .eyebrow::before{ background:#5FD4DB; }
   .hero h1{
     font-size:clamp(32px, 4.4vw, 50px);
     margin:20px 0 22px;
@@ -267,11 +269,12 @@
     color:var(--white);
     position:relative;
   }
-  .split-panel.teal{ background:linear-gradient(160deg, var(--teal) 0%, var(--teal-deep) 100%); }
+  /* Line the teal panel's text up with the centred page column: half the page minus half the container (580px) plus the 28px gutter */
+  .split-panel.teal{ background:linear-gradient(160deg, var(--teal) 0%, var(--teal-deep) 100%); padding-left:max(28px, calc(100% - 552px)); }
   .split-panel.maroon{ background:linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%); }
   .split-panel .tag{ font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.85; }
-  .split-panel h3{ font-size:26px; margin:16px 0 20px; max-width:340px; }
-  .split-panel ul{ display:flex; flex-direction:column; gap:13px; max-width:360px; }
+  .split-panel h3{ font-size:26px; margin:16px 0 20px; max-width:440px; }
+  .split-panel ul{ display:flex; flex-direction:column; gap:13px; max-width:460px; }
   .split-panel li{
     font-size:15px; padding-left:22px; position:relative; opacity:0.95;
   }
@@ -388,7 +391,7 @@
   .trusted-logo img:hover{
     filter:grayscale(0%); opacity:1;
   }
-  /* Use this modifier for logos that are white/very light on a transparent background — inverts them to dark so they're visible on the white section, without a background chip */
+  /* Use this modifier for logos that are white/very light on a transparent background. It inverts them to dark so they're visible on the white section, without a background chip */
   .trusted-logo--invert img{
     filter:invert(1) grayscale(100%) opacity(0.75);
   }
@@ -421,13 +424,25 @@
     padding:56px 48px;
   }
   .contact-left .eyebrow{ color:#5FD4DB; }
-  .contact-left .eyebrow::before{ background:#5FD4DB; }
   .contact-left h2{ font-size:clamp(24px,2.8vw,32px); margin:16px 0 14px; max-width:420px; }
   .contact-left p{ color:#C6D4D6; font-size:15px; max-width:420px; margin-bottom:30px; }
   .contact-right{
-    background:var(--white); padding:56px 48px;
+    background:var(--white); padding:40px 48px;
+    display:flex; flex-direction:column; justify-content:center;
   }
-  .contact-field{ margin-bottom:22px; }
+  .contact-field{
+    display:flex; align-items:flex-start; gap:16px;
+    padding:22px 0; border-top:1px solid var(--line);
+  }
+  .contact-field:first-child{ border-top:none; }
+  .contact-icon{
+    width:42px; height:42px; border-radius:11px; flex-shrink:0;
+    background:var(--mist); color:var(--teal-deep);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .contact-field .v{ display:block; line-height:1.5; }
+  .contact-link{ display:inline-block; margin-top:8px; font-size:13.5px; font-weight:600; color:var(--teal); }
+  .contact-link:hover{ color:var(--maroon); }
   .contact-field .k{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); margin-bottom:6px; }
   .contact-field .v{ font-size:15.5px; font-weight:500; }
   .contact-field a.v:hover{ color:var(--maroon); }
@@ -459,9 +474,11 @@
     position:fixed; inset:0; background:var(--navy); z-index:150;
     display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
     padding:40px;
-    transform:translateY(-100%); transition:transform .28s ease;
+    transform:translateY(-100%); visibility:hidden;
+    transition:transform .28s ease, visibility 0s linear .28s;
   }
-  .mobile-nav.open{ transform:translateY(0); }
+  .mobile-nav.open{ transform:translateY(0); visibility:visible; transition:transform .28s ease, visibility 0s; }
+  body.nav-open{ overflow:hidden; }
   .mobile-nav a{ color:var(--white); font-family:var(--font-display); font-size:26px; font-weight:600; padding:14px 0; }
   .mobile-nav .btn{ margin-top:20px; }
   .mobile-close{ position:absolute; top:22px; right:24px; background:none; border:none; color:var(--white); font-size:26px; cursor:pointer; }
@@ -473,6 +490,8 @@
     .hero-inner{ grid-template-columns:1fr; }
     .hero-panel{ max-width:440px; }
     .split{ grid-template-columns:1fr; min-height:auto; }
+    .split-panel.teal{ padding-left:28px; }
+    .split-panel.maroon{ padding-left:28px; }
     .services-grid{ grid-template-columns:1fr 1fr; }
     .flagship-inner{ grid-template-columns:1fr; }
     .stats-row{ grid-template-columns:1fr 1fr; row-gap:26px; }
@@ -483,7 +502,7 @@
     .section-pad{ padding:64px 0; }
     .services-grid{ grid-template-columns:1fr; }
     .hero{ padding:70px 0 56px; }
-    .split-panel{ padding:48px 26px; }
+    .split-panel{ padding:48px 28px; }
     .contact-left, .contact-right{ padding:40px 26px; }
     .stats-row{ grid-template-columns:1fr 1fr; }
     .feature-list{ grid-template-columns:1fr; }
@@ -500,38 +519,42 @@
 <body>
 
 <!-- ============ HEADER ============ -->
-<header class="site-header">
+<a class="skip-link" href="#about">Skip to content</a>
+<header class="site-header" id="siteHeader">
   <div class="wrap header-row">
-    <a href="#top" class="brand">
-      <img src="assets/logo.png" alt="Total Automation &amp; Network Solutions logo">
+    <a href="#top" class="brand" aria-label="TANS home">
+      <img src="assets/logo.png" alt="" width="48" height="48">
+      <span class="brand-name">TANS<small>Automation &amp; Network Solutions</small></span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main">
       <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#platform">Smart Meter Platform</a>
+      <a href="services.html">Services</a>
+      <a href="#platform">Platform</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-cta">
+      <a class="header-phone" href="tel:+919254006241">+91 92540 06241</a>
       <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">
         WhatsApp Enquiry
       </a>
     </div>
-    <button class="nav-toggle" aria-label="Open menu" id="navToggle"><span></span></button>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav" id="navToggle"><span></span></button>
   </div>
 </header>
 
-<div class="mobile-nav" id="mobileNav">
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
   <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
   <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#platform">Smart Meter Platform</a>
+  <a href="services.html">Services</a>
+  <a href="#platform">Platform</a>
   <a href="#contact">Contact</a>
-  <a class="btn btn-whatsapp" href="https://wa.me/919254006241" target="_blank" rel="noopener">WhatsApp Enquiry</a>
-</div>
+  <a href="tel:+919254006241">Call +91 92540 06241</a>
+  <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+</nav>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <canvas id="meshCanvas"></canvas>
+  <canvas id="meshCanvas" aria-hidden="true"></canvas>
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <span class="eyebrow">Since 2011</span>
@@ -544,8 +567,8 @@
     </div>
     <div class="hero-panel">
       <div class="hero-panel-head"><span><span class="dot"></span>Sample telemetry</span> PREVIEW</div>
-      <div class="telemetry-row"><span class="label">Site A — Meter 014</span><span class="value">231.4<span>kWh</span></span></div>
-      <div class="telemetry-row"><span class="label">Site A — Meter 022</span><span class="value">118.9<span>kWh</span></span></div>
+      <div class="telemetry-row"><span class="label">Site A / Meter 014</span><span class="value">231.4<span>kWh</span></span></div>
+      <div class="telemetry-row"><span class="label">Site A / Meter 022</span><span class="value">118.9<span>kWh</span></span></div>
       <div class="telemetry-row"><span class="label">Relay status</span><span class="value">ON<span>auto</span></span></div>
       <div class="telemetry-row"><span class="label">Connected sites</span><span class="value">03<span>active</span></span></div>
     </div>
@@ -555,10 +578,10 @@
 <!-- ============ TRUSTED BY ============ -->
 <section class="trusted">
   <div class="wrap">
-    <div class="trusted-label">Trusted by teams we've worked with</div>
+    <div class="trusted-label">Companies we've worked with</div>
     <div class="trusted-viewport">
       <div class="trusted-row">
-        <!-- List is duplicated below for a seamless loop — keep both copies identical. -->
+        <!-- List is duplicated below for a seamless loop, so keep both copies identical. -->
         <div class="trusted-logo"><img src="assets/clients/siemens.png" alt="Siemens"></div>
         <div class="trusted-logo trusted-logo--invert"><img src="assets/clients/lt.svg" alt="L&amp;T"></div>
         <div class="trusted-logo"><img src="assets/clients/honeywell.png" alt="Honeywell"></div>
@@ -576,7 +599,7 @@
 <section id="about">
   <div class="wrap" style="padding-top:64px;">
     <div class="section-head">
-      <span class="eyebrow" style="color:var(--teal)">Since 2011</span>
+      <span class="eyebrow" style="color:var(--teal)">About us</span>
       <h2>We've spent 15 years with our hands inside control panels</h2>
       <p>No fancy origin story here. We started out wiring PLCs and pulling cable through factory ceilings, and we got good at it because we had to. Somewhere along the way, "good at automation" turned into "why isn't this data going anywhere?" That question is basically what's driving the company now.</p>
       <p>Automation and networking are still core to our work. The platform is something new we're building in parallel, not a replacement.</p>
@@ -613,6 +636,7 @@
       <span class="eyebrow" style="color:var(--maroon)">What we do</span>
       <h2>Services &amp; Products, one team</h2>
       <p>Everything we install and support day to day, plus the platform we're building alongside it.</p>
+      <a class="contact-link" href="services.html">See each service in detail &rarr;</a>
     </div>
     <div class="services-grid">
       <div class="service-card">
@@ -684,10 +708,11 @@
       </ul>
       <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20join%20the%20early%20access%20list%20for%20the%20smart%20meter%20platform." target="_blank" rel="noopener">Join early access list</a>
     </div>
+    <div class="flagship-visual">
     <div class="dash-mock" aria-hidden="true">
       <div class="dash-mock-head">
         <span></span><span></span><span></span>
-        <span class="dash-mock-title">SITE OVERVIEW — PREVIEW</span>
+        <span class="dash-mock-title">SITE OVERVIEW (PREVIEW)</span>
       </div>
       <div class="dash-grid">
         <div class="dash-tile">
@@ -714,16 +739,17 @@
       <div class="dash-mock-foot"><span>Sample data</span><span>Illustrative only</span></div>
     </div>
     <p style="font-family:var(--font-mono); font-size:11px; color:#6C8082; text-align:center; margin-top:10px;">Mockup shown for illustration. Platform is still in development.</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ STATS ============ -->
 <section class="stats">
   <div class="wrap stats-row">
-    <div class="stat"><div class="v">2026</div><div class="l">Year we started building our own platform</div></div>
+    <div class="stat"><div class="v">2011</div><div class="l">Year we were established</div></div>
+    <div class="stat"><div class="v">15 yrs</div><div class="l">Installing and supporting systems on-site</div></div>
     <div class="stat"><div class="v">06</div><div class="l">Core service areas under one team</div></div>
     <div class="stat"><div class="v">24 hr</div><div class="l">Typical response time to an enquiry</div></div>
-    <div class="stat"><div class="v">01</div><div class="l">Platform, built to run many sites</div></div>
   </div>
 </section>
 
@@ -734,21 +760,31 @@
       <div class="contact-left">
         <span class="eyebrow">Get in touch</span>
         <h2>Tell us what you're building</h2>
-        <p>Whether it's a panel that needs wiring, a network that needs designing, or a platform you want to see a demo of, reach out and we'll get back to you.</p>
+        <p>Whether it's a panel that needs wiring, a network that needs designing, or early access to the platform we're building, reach out and we'll get back to you.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">Start a WhatsApp chat</a>
       </div>
       <div class="contact-right">
         <div class="contact-field">
-          <div class="k">Email</div>
-          <a class="v" href="mailto:sanjaytans@gmail.com">sanjaytans@gmail.com</a>
+          <span class="contact-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div>
+            <div class="k">Email</div>
+            <a class="v" href="mailto:sanjaytans@gmail.com">sanjaytans@gmail.com</a>
+          </div>
         </div>
         <div class="contact-field">
-          <div class="k">Phone</div>
-          <a class="v" href="tel:+919254006241">+91 92540 06241</a>
+          <span class="contact-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div>
+            <div class="k">Phone</div>
+            <a class="v" href="tel:+919254006241">+91 92540 06241</a>
+          </div>
         </div>
         <div class="contact-field">
-          <div class="k">Address</div>
-          <span class="v">519/12, Saini Colony, Panipat, Haryana - 132103, India</span>
+          <span class="contact-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div>
+            <div class="k">Office</div>
+            <span class="v">519/12, Saini Colony<br>Panipat, Haryana 132103</span>
+            <a class="contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=519%2F12%20Saini%20Colony%20Panipat%20Haryana%20132103" target="_blank" rel="noopener">Get directions &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -765,11 +801,12 @@
       </a>
       <nav class="footer-links">
         <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="services.html">Services</a>
         <a href="#platform">Platform</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
+    <div class="footer-fine">519/12, Saini Colony, Panipat, Haryana - 132103 &nbsp;|&nbsp; <a href="tel:+919254006241">+91 92540 06241</a> &nbsp;|&nbsp; <a href="mailto:sanjaytans@gmail.com">sanjaytans@gmail.com</a></div>
     <div class="footer-fine">GSTIN: 06BGQPJ7989G1ZL &nbsp;|&nbsp; Established 2011</div>
     <div class="footer-fine">&copy; <span id="year"></span> Total Automation &amp; Network Solutions. All rights reserved.</div>
   </div>
@@ -785,11 +822,51 @@
   var toggle = document.getElementById('navToggle');
   var mnav = document.getElementById('mobileNav');
   var mclose = document.getElementById('mobileClose');
-  toggle.addEventListener('click', function(){ mnav.classList.add('open'); });
-  mclose.addEventListener('click', function(){ mnav.classList.remove('open'); });
+  function openNav(){
+    mnav.classList.add('open');
+    document.body.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    mclose.focus();
+  }
+  function closeNav(returnFocus){
+    mnav.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if(returnFocus) toggle.focus();
+  }
+  toggle.addEventListener('click', openNav);
+  mclose.addEventListener('click', function(){ closeNav(true); });
   mnav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ mnav.classList.remove('open'); });
+    a.addEventListener('click', function(){ closeNav(false); });
   });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mnav.classList.contains('open')) closeNav(true);
+  });
+
+  // ---- Header shadow once the page is scrolled ----
+  var header = document.getElementById('siteHeader');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // ---- Highlight the nav link of the section currently on screen ----
+  var navLinks = document.querySelectorAll('.nav-links a');
+  if('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        navLinks.forEach(function(link){
+          var on = link.getAttribute('href') === '#' + entry.target.id;
+          link.classList.toggle('active', on);
+          if(on) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    ['about','services','platform','contact'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) spy.observe(el);
+    });
+  }
 
   // ---- Hero mesh network animation ----
   (function(){
