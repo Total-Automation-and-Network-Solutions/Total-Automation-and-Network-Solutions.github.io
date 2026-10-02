@@ -54,6 +54,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<script>document.documentElement.className='js';</script>
+
 <style>
   /* ============ TOKENS ============ */
   :root{
@@ -268,6 +270,15 @@
     padding:64px 44px;
     color:var(--white);
     position:relative;
+    overflow:hidden;
+  }
+  /* soft ring in the corner of each panel */
+  .split-panel::after{
+    content:""; position:absolute; right:-90px; top:-90px;
+    width:260px; height:260px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.16);
+    box-shadow:0 0 0 44px rgba(255,255,255,0.04);
+    pointer-events:none;
   }
   /* Line the teal panel's text up with the centred page column: half the page minus half the container (580px) plus the 28px gutter */
   .split-panel.teal{ background:linear-gradient(160deg, var(--teal) 0%, var(--teal-deep) 100%); padding-left:max(28px, calc(100% - 552px)); }
@@ -291,8 +302,19 @@
     border:1px solid var(--line);
     border-radius:var(--radius-m);
     padding:30px 24px;
+    position:relative; overflow:hidden; display:block;
     transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
+  /* coloured bar that slides in along the top edge on hover */
+  .service-card::before{
+    content:""; position:absolute; left:0; top:0; width:100%; height:3px;
+    background:linear-gradient(90deg, var(--teal), var(--teal-deep));
+    transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  .service-card:nth-child(even)::before{ background:linear-gradient(90deg, var(--maroon), var(--maroon-deep)); }
+  .service-card:hover::before{ transform:scaleX(1); }
+  .service-more{ display:inline-block; margin-top:16px; font-size:13.5px; font-weight:600; color:var(--teal); }
+  .service-card:nth-child(even) .service-more{ color:var(--maroon); }
   .service-card:hover{
     transform:translateY(-5px);
     box-shadow:0 22px 40px -22px rgba(14,27,33,0.25);
@@ -304,10 +326,17 @@
   }
   .service-icon{
     width:44px; height:44px; border-radius:11px;
-    background:var(--mist); color:var(--teal-deep);
+    background:linear-gradient(150deg, var(--teal), var(--teal-deep)); color:var(--white);
+    box-shadow:0 12px 22px -12px rgba(16,63,68,0.75);
     display:flex; align-items:center; justify-content:center;
     margin-bottom:18px;
   }
+  .service-card:nth-child(even) .service-icon{
+    background:linear-gradient(150deg, var(--maroon), var(--maroon-deep));
+    box-shadow:0 12px 22px -12px rgba(110,30,30,0.75);
+  }
+  .service-num{ color:var(--teal); }
+  .service-card:nth-child(even) .service-num{ color:var(--maroon); }
   .service-card h4{ font-size:17.5px; margin-bottom:10px; }
   .service-card p{ font-size:14.5px; color:var(--ink-soft); }
 
@@ -335,6 +364,7 @@
     display:flex; align-items:center; gap:8px; margin-bottom:18px;
   }
   .dash-mock-head span{ width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.2); }
+  .dash-mock-head .dash-mock-title{ width:auto; height:auto; background:none; border-radius:0; white-space:nowrap; }
   .dash-mock-title{ margin-left:8px; font-family:var(--font-mono); font-size:12px; color:#9FB4B6; letter-spacing:0.04em; }
   .dash-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
   .dash-tile{
@@ -405,7 +435,7 @@
   }
   .stats-row{
     display:grid; grid-template-columns:repeat(4,1fr);
-    padding:44px 0;
+    padding:44px 28px;
   }
   .stat{ text-align:left; padding:0 20px; border-left:1px solid var(--line); }
   .stat:first-child{ border-left:none; padding-left:0; }
@@ -483,6 +513,17 @@
   .mobile-nav .btn{ margin-top:20px; }
   .mobile-close{ position:absolute; top:22px; right:24px; background:none; border:none; color:var(--white); font-size:26px; cursor:pointer; }
 
+  /* ============ SCROLL REVEAL ============ */
+  .js .reveal{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .js .reveal.in{ opacity:1; transform:none; }
+  .js .reveal.delay{ transition-delay:.12s; }
+  /* service cards appear one after another across each row */
+  .js .services-grid .reveal:nth-child(3n+2){ transition-delay:.08s; }
+  .js .services-grid .reveal:nth-child(3n){ transition-delay:.16s; }
+  /* the bars in the dashboard mockup grow as it appears */
+  .js .reveal .dash-bar i{ transform:scaleX(0); transform-origin:left; transition:transform .7s ease .2s; }
+  .js .reveal.in .dash-bar i{ transform:scaleX(1); }
+
   /* ============ RESPONSIVE ============ */
   @media (max-width: 980px){
     .nav-links, .header-cta{ display:none; }
@@ -513,6 +554,8 @@
     html{ scroll-behavior:auto; }
     .btn:hover{ transform:none; }
     .trusted-row{ animation:none; }
+    .js .reveal{ opacity:1; transform:none; transition:none; }
+    .js .reveal .dash-bar i{ transform:none; transition:none; }
   }
 </style>
 </head>
@@ -598,7 +641,7 @@
 <!-- ============ ABOUT / TRANSITION ============ -->
 <section id="about">
   <div class="wrap" style="padding-top:64px;">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow" style="color:var(--teal)">About us</span>
       <h2>We've spent 15 years with our hands inside control panels</h2>
       <p>No fancy origin story here. We started out wiring PLCs and pulling cable through factory ceilings, and we got good at it because we had to. Somewhere along the way, "good at automation" turned into "why isn't this data going anywhere?" That question is basically what's driving the company now.</p>
@@ -606,7 +649,7 @@
     </div>
   </div>
   <div class="split">
-    <div class="split-panel teal">
+    <div class="split-panel teal reveal">
       <span class="tag">What we do every day</span>
       <h3>Panels, cabling and getting it right on-site</h3>
       <ul>
@@ -616,7 +659,7 @@
         <li>2023: reorganised as Total Automation &amp; Network Solutions to match where we were headed</li>
       </ul>
     </div>
-    <div class="split-panel maroon">
+    <div class="split-panel maroon reveal delay">
       <span class="tag">What we're building alongside it</span>
       <h3>Our own IoT platform, from the ground up</h3>
       <ul>
@@ -632,61 +675,67 @@
 <!-- ============ SERVICES ============ -->
 <section class="section-pad" id="services">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow" style="color:var(--maroon)">What we do</span>
       <h2>Services &amp; Products, one team</h2>
       <p>Everything we install and support day to day, plus the platform we're building alongside it.</p>
       <a class="contact-link" href="services.html">See each service in detail &rarr;</a>
     </div>
     <div class="services-grid">
-      <div class="service-card">
+      <a class="service-card reveal" href="services.html#building-automation">
         <div class="service-num">01</div>
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
         </div>
         <h4>Building Automation</h4>
         <p>PLC &amp; relay-based control panels, process automation and on-site commissioning for plants and facilities.</p>
-      </div>
-      <div class="service-card">
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#software">
         <div class="service-num">02</div>
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13l-6 4M12 13l6 4"/></svg>
         </div>
         <h4>Software Customization</h4>
         <p>Custom dashboards and multi-tenant platforms built in-house, designed around how your team actually works.</p>
-      </div>
-      <div class="service-card">
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#iot">
         <div class="service-num">03</div>
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M10 21h4"/></svg>
         </div>
         <h4>IoT Devices</h4>
         <p>Connected sensors and smart meters with real-time telemetry, delivered over MQTT to your dashboard.</p>
-      </div>
-      <div class="service-card">
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#fire-alarm">
         <div class="service-num">04</div>
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
         </div>
         <h4>Fire Alarm Systems</h4>
         <p>Detection, alarm panels and monitoring systems designed and installed to protect buildings and people.</p>
-      </div>
-      <div class="service-card">
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#cctv">
         <div class="service-num">05</div>
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
         </div>
         <h4>CCTV Surveillance Systems</h4>
         <p>Camera systems, NVR setup and remote monitoring for factories, offices and multi-site operations.</p>
-      </div>
-      <div class="service-card">
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#public-address">
         <div class="service-num">06</div>
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
         </div>
         <h4>Public Address Systems</h4>
         <p>Announcement and paging systems for factories, campuses and public spaces, built for clear, reliable coverage.</p>
-      </div>
+        <span class="service-more">View details &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -694,7 +743,7 @@
 <!-- ============ FLAGSHIP: SMART METER PLATFORM ============ -->
 <section class="section-pad flagship" id="platform">
   <div class="wrap flagship-inner">
-    <div class="flagship-copy">
+    <div class="flagship-copy reveal">
       <span class="badge">In development, not yet live</span>
       <h2>Our flagship build: a smart meter platform for multi-site operations</h2>
       <p class="lead">One dashboard for every site. Operators get live consumption data, remote relay control and prepaid recharge, with each client's data kept fully separate from the next. We're building this in-house and it isn't ready for a live demo yet, but we're taking early conversations with operators who want a say in how it works.</p>
@@ -708,7 +757,7 @@
       </ul>
       <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20join%20the%20early%20access%20list%20for%20the%20smart%20meter%20platform." target="_blank" rel="noopener">Join early access list</a>
     </div>
-    <div class="flagship-visual">
+    <div class="flagship-visual reveal delay">
     <div class="dash-mock" aria-hidden="true">
       <div class="dash-mock-head">
         <span></span><span></span><span></span>
@@ -745,7 +794,7 @@
 
 <!-- ============ STATS ============ -->
 <section class="stats">
-  <div class="wrap stats-row">
+  <div class="wrap stats-row reveal">
     <div class="stat"><div class="v">2011</div><div class="l">Year we were established</div></div>
     <div class="stat"><div class="v">15 yrs</div><div class="l">Installing and supporting systems on-site</div></div>
     <div class="stat"><div class="v">06</div><div class="l">Core service areas under one team</div></div>
@@ -756,7 +805,7 @@
 <!-- ============ CONTACT ============ -->
 <section class="section-pad" id="contact">
   <div class="wrap">
-    <div class="contact-inner">
+    <div class="contact-inner reveal">
       <div class="contact-left">
         <span class="eyebrow">Get in touch</span>
         <h2>Tell us what you're building</h2>
@@ -866,6 +915,24 @@
       var el = document.getElementById(id);
       if(el) spy.observe(el);
     });
+  }
+
+  // ---- Fade sections in as they scroll into view ----
+  var reveals = document.querySelectorAll('.reveal');
+  function show(el){
+    el.classList.add('in');
+    // once the animation is over, drop the helper classes so hover effects work normally again
+    setTimeout(function(){ el.classList.remove('reveal', 'in', 'delay'); }, 1200);
+  }
+  if('IntersectionObserver' in window){
+    var revealer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ show(entry.target); revealer.unobserve(entry.target); }
+      });
+    }, { rootMargin:'0px 0px -10% 0px' });
+    reveals.forEach(function(el){ revealer.observe(el); });
+  } else {
+    reveals.forEach(show);
   }
 
   // ---- Hero mesh network animation ----

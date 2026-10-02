@@ -20,6 +20,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<script>document.documentElement.className='js';</script>
+
 <style>
   /* ============ TOKENS (same as index.html) ============ */
   :root{
@@ -150,7 +152,9 @@
   .mobile-close{ position:absolute; top:22px; right:24px; background:none; border:none; color:var(--white); font-size:26px; cursor:pointer; }
 
   /* ============ PAGE HERO (new for this page) ============ */
-  .page-hero{ background:var(--navy); color:var(--white); padding:72px 0 64px; }
+  .page-hero{ background:var(--navy); color:var(--white); padding:72px 0 64px; overflow:hidden; }
+  .page-hero canvas{ position:absolute; inset:0; z-index:1; opacity:0.75; }
+  .page-hero .wrap{ position:relative; z-index:2; }
   .page-hero .eyebrow{ color:#5FD4DB; }
   .page-hero h1{ font-size:clamp(30px,4vw,44px); margin:18px 0 18px; max-width:720px; }
   .page-hero p{ color:#C6D4D6; font-size:17px; max-width:600px; }
@@ -163,44 +167,97 @@
   }
   .jump-links a:hover{ border-color:#5FD4DB; background:rgba(95,212,219,0.1); }
 
-  /* ============ SERVICE DETAIL BLOCKS (new for this page) ============ */
-  .service-detail{ padding:72px 0; border-bottom:1px solid var(--line); scroll-margin-top:80px; }
-  .service-detail:nth-of-type(even){ background:var(--white); }
-  .service-detail-inner{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
-  .service-num{ font-family:var(--font-mono); font-size:12px; color:var(--maroon); margin-bottom:16px; }
-  .service-icon{
-    width:48px; height:48px; border-radius:12px;
-    background:var(--mist); color:var(--teal-deep);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:20px;
+  /* ============ STATS STRIP (same idea as index.html) ============ */
+  .stats{ background:var(--mist); border-bottom:1px solid var(--line); }
+  .stats-row{ display:grid; grid-template-columns:repeat(4,1fr); padding:32px 28px; }
+  .stat{ padding:0 20px; border-left:1px solid var(--line); }
+  .stat:first-child{ border-left:none; padding-left:0; }
+  .stat .v{ font-family:var(--font-display); font-weight:700; font-size:26px; color:var(--teal-deep); }
+  .stat .l{ font-size:13px; color:var(--ink-soft); margin-top:4px; }
+
+  /* ============ SERVICE DETAIL BLOCKS ============ */
+  .service-detail{ padding:68px 0; border-bottom:1px solid var(--line); scroll-margin-top:80px; overflow:hidden; }
+  .service-detail.alt{ background:var(--white); }
+  .service-detail-inner{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  /* zigzag: on every second service the text moves to the right and the card to the left */
+  .service-detail.alt .service-copy{ order:2; }
+
+  .service-copy{ position:relative; z-index:0; }
+  .service-ghost{
+    position:absolute; z-index:-1; top:-40px; right:0;
+    font-family:var(--font-display); font-weight:700; font-size:160px; line-height:1;
+    color:var(--teal); opacity:0.08; pointer-events:none; user-select:none;
   }
-  .service-detail h2{ font-size:clamp(24px,2.6vw,30px); margin-bottom:14px; }
-  .service-detail p.desc{ color:var(--ink-soft); font-size:16px; max-width:480px; margin-bottom:22px; }
-  .enquire-link{ font-size:14.5px; font-weight:600; color:var(--teal); }
-  .enquire-link:hover{ color:var(--maroon); }
+  .service-detail.alt .service-ghost{ color:var(--maroon); }
+  .service-head{ display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .service-icon{
+    width:52px; height:52px; border-radius:13px; flex-shrink:0;
+    background:linear-gradient(150deg, var(--teal), var(--teal-deep)); color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 22px -12px rgba(16,63,68,0.75);
+  }
+  .service-detail.alt .service-icon{
+    background:linear-gradient(150deg, var(--maroon), var(--maroon-deep));
+    box-shadow:0 12px 22px -12px rgba(110,30,30,0.75);
+  }
+  .service-num{ font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); }
+  .service-detail.alt .service-num{ color:var(--maroon); }
+  .service-detail h2{ font-size:clamp(26px,2.8vw,34px); margin-bottom:14px; }
+  .service-detail p.desc{ color:var(--ink-soft); font-size:16px; max-width:480px; margin-bottom:26px; }
+  .enquire-link{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:14.5px; font-weight:600; color:var(--teal-deep);
+    border:1.5px solid var(--teal); border-radius:999px; padding:10px 18px;
+    transition:background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .enquire-link:hover{ background:var(--teal); color:var(--white); transform:translateY(-2px); }
+  .service-detail.alt .enquire-link{ color:var(--maroon-deep); border-color:var(--maroon); }
+  .service-detail.alt .enquire-link:hover{ background:var(--maroon); color:var(--white); }
 
   .included{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--radius-m);
-    padding:28px 28px 12px;
+    position:relative; overflow:hidden;
+    color:var(--white);
+    background:linear-gradient(160deg, #17757D 0%, var(--teal-deep) 100%);
+    border-radius:var(--radius-l);
+    padding:34px 34px 20px;
+    box-shadow:0 30px 50px -30px rgba(16,63,68,0.7);
   }
-  .service-detail:nth-of-type(even) .included{ background:var(--paper); }
+  .service-detail.alt .included{
+    background:linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+    box-shadow:0 30px 50px -30px rgba(110,30,30,0.7);
+  }
+  /* soft ring in the corner of the card */
+  .included::after{
+    content:""; position:absolute; right:-80px; top:-80px;
+    width:210px; height:210px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.16);
+    box-shadow:0 0 0 36px rgba(255,255,255,0.045);
+    pointer-events:none;
+  }
   .included-title{
-    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.1em;
+    text-transform:uppercase; color:rgba(255,255,255,0.78); margin-bottom:8px;
   }
   .included li{
-    font-size:15px; padding:14px 0 14px 28px; position:relative;
-    border-top:1px solid var(--line);
+    font-size:15.5px; padding:14px 0 14px 34px; position:relative;
+    border-top:1px solid rgba(255,255,255,0.16);
   }
   .included li:first-child{ border-top:none; }
   .included li::before{
-    content:"✓"; position:absolute; left:0; top:14px;
-    color:var(--teal); font-size:13px; font-weight:700;
+    content:"✓"; position:absolute; left:0; top:15px;
+    width:20px; height:20px; border-radius:50%;
+    background:rgba(255,255,255,0.18); color:var(--white);
+    font-size:11px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
   }
-  .fit{ font-size:13.5px; color:var(--ink-soft); margin-top:16px; }
-  .fit strong{ color:var(--ink); font-weight:600; }
+  .fit{ font-size:13.5px; color:rgba(255,255,255,0.85); padding:14px 0; border-top:1px solid rgba(255,255,255,0.16); }
+  .fit strong{ color:var(--white); font-weight:600; }
+  .inline-link{ color:var(--white); text-decoration:underline; text-underline-offset:3px; }
+
+  /* ============ SCROLL REVEAL ============ */
+  .js .reveal{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .js .reveal.in{ opacity:1; transform:none; }
+  .js .reveal.delay{ transition-delay:.12s; }
 
   /* ============ HOW WE WORK (new for this page) ============ */
   .process{ background:var(--mist); padding:72px 0; border-bottom:1px solid var(--line); }
@@ -240,6 +297,10 @@
     .nav-links, .header-cta{ display:none; }
     .nav-toggle{ display:flex; }
     .service-detail-inner{ grid-template-columns:1fr; gap:32px; }
+    .service-detail.alt .service-copy{ order:0; }
+    .service-ghost{ font-size:110px; top:-24px; }
+    .stats-row{ grid-template-columns:1fr 1fr; row-gap:22px; }
+    .stat:nth-child(3){ border-left:none; padding-left:0; }
     .process-steps{ grid-template-columns:1fr 1fr; }
   }
   @media (max-width: 640px){
@@ -251,6 +312,7 @@
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .btn:hover{ transform:none; }
+    .js .reveal{ opacity:1; transform:none; transition:none; }
   }
 </style>
 </head>
@@ -294,6 +356,7 @@
 
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero">
+  <canvas id="meshCanvas" aria-hidden="true"></canvas>
   <div class="wrap">
     <span class="eyebrow">Services</span>
     <h1>What we install, wire and support</h1>
@@ -309,19 +372,30 @@
   </div>
 </section>
 
+<!-- ============ STATS STRIP ============ -->
+<section class="stats">
+  <div class="wrap stats-row">
+    <div class="stat"><div class="v">2011</div><div class="l">Year we were established</div></div>
+    <div class="stat"><div class="v">15 yrs</div><div class="l">Installing and supporting systems on-site</div></div>
+    <div class="stat"><div class="v">06</div><div class="l">Core service areas under one team</div></div>
+    <div class="stat"><div class="v">24 hr</div><div class="l">Typical response time to an enquiry</div></div>
+  </div>
+</section>
+
 <!-- ============ 01 BUILDING AUTOMATION ============ -->
 <section class="service-detail" id="building-automation">
   <div class="wrap service-detail-inner">
-    <div>
-      <div class="service-num">01</div>
-      <div class="service-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+    <div class="service-copy reveal">
+      <span class="service-ghost" aria-hidden="true">01</span>
+      <div class="service-head">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></div>
+        <div class="service-num">Service 01</div>
       </div>
       <h2>Building Automation</h2>
       <p class="desc">This is where we started. We build and wire PLC and relay-based control panels, automate processes for plants and facilities, and commission everything on-site so it works on the day it's handed over.</p>
       <a class="enquire-link" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20building%20automation." target="_blank" rel="noopener">Enquire about building automation &rarr;</a>
     </div>
-    <div class="included">
+    <div class="included reveal delay">
       <div class="included-title">What's included</div>
       <ul>
         <li>PLC and relay-based control panels</li>
@@ -335,18 +409,19 @@
 </section>
 
 <!-- ============ 02 SOFTWARE CUSTOMIZATION ============ -->
-<section class="service-detail" id="software">
+<section class="service-detail alt" id="software">
   <div class="wrap service-detail-inner">
-    <div>
-      <div class="service-num">02</div>
-      <div class="service-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13l-6 4M12 13l6 4"/></svg>
+    <div class="service-copy reveal">
+      <span class="service-ghost" aria-hidden="true">02</span>
+      <div class="service-head">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13l-6 4M12 13l6 4"/></svg></div>
+        <div class="service-num">Service 02</div>
       </div>
       <h2>Software Customization</h2>
       <p class="desc">We build custom dashboards and multi-tenant platforms in-house, designed around how your team actually works.</p>
       <a class="enquire-link" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20custom%20software." target="_blank" rel="noopener">Enquire about custom software &rarr;</a>
     </div>
-    <div class="included">
+    <div class="included reveal delay">
       <div class="included-title">What's included</div>
       <ul>
         <li>Custom dashboards for your sites and equipment</li>
@@ -361,16 +436,17 @@
 <!-- ============ 03 IOT DEVICES ============ -->
 <section class="service-detail" id="iot">
   <div class="wrap service-detail-inner">
-    <div>
-      <div class="service-num">03</div>
-      <div class="service-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M10 21h4"/></svg>
+    <div class="service-copy reveal">
+      <span class="service-ghost" aria-hidden="true">03</span>
+      <div class="service-head">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M10 21h4"/></svg></div>
+        <div class="service-num">Service 03</div>
       </div>
       <h2>IoT Devices</h2>
       <p class="desc">Connected sensors and smart meters that report what's happening on-site as it happens. Readings travel over MQTT to a dashboard, so you can see consumption and status without sending someone to check.</p>
       <a class="enquire-link" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20IoT%20devices." target="_blank" rel="noopener">Enquire about IoT devices &rarr;</a>
     </div>
-    <div class="included">
+    <div class="included reveal delay">
       <div class="included-title">What's included</div>
       <ul>
         <li>Connected sensors and smart meters</li>
@@ -378,24 +454,25 @@
         <li>Remote relay on/off control</li>
         <li>Readings delivered to your dashboard</li>
       </ul>
-      <p class="fit"><strong>Related:</strong> our <a class="enquire-link" href="index.html#platform">smart meter platform</a> is in development.</p>
+      <p class="fit"><strong>Related:</strong> our <a class="inline-link" href="index.html#platform">smart meter platform</a> is in development.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ 04 FIRE ALARM ============ -->
-<section class="service-detail" id="fire-alarm">
+<section class="service-detail alt" id="fire-alarm">
   <div class="wrap service-detail-inner">
-    <div>
-      <div class="service-num">04</div>
-      <div class="service-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+    <div class="service-copy reveal">
+      <span class="service-ghost" aria-hidden="true">04</span>
+      <div class="service-head">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
+        <div class="service-num">Service 04</div>
       </div>
       <h2>Fire Alarm Systems</h2>
       <p class="desc">Detection, alarm panels and monitoring, designed around your building and installed to protect the people in it. We plan the layout, do the cabling and test the system before handover.</p>
       <a class="enquire-link" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20fire%20alarm%20systems." target="_blank" rel="noopener">Enquire about fire alarm systems &rarr;</a>
     </div>
-    <div class="included">
+    <div class="included reveal delay">
       <div class="included-title">What's included</div>
       <ul>
         <li>Fire detection devices across the building</li>
@@ -411,16 +488,17 @@
 <!-- ============ 05 CCTV ============ -->
 <section class="service-detail" id="cctv">
   <div class="wrap service-detail-inner">
-    <div>
-      <div class="service-num">05</div>
-      <div class="service-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+    <div class="service-copy reveal">
+      <span class="service-ghost" aria-hidden="true">05</span>
+      <div class="service-head">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <div class="service-num">Service 05</div>
       </div>
       <h2>CCTV Surveillance Systems</h2>
       <p class="desc">Camera systems for factories, offices and operations spread over several sites. We place the cameras, set up the NVR for recording, and configure remote monitoring so you can check in from anywhere.</p>
       <a class="enquire-link" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20CCTV%20systems." target="_blank" rel="noopener">Enquire about CCTV systems &rarr;</a>
     </div>
-    <div class="included">
+    <div class="included reveal delay">
       <div class="included-title">What's included</div>
       <ul>
         <li>Camera placement and installation</li>
@@ -434,18 +512,19 @@
 </section>
 
 <!-- ============ 06 PUBLIC ADDRESS ============ -->
-<section class="service-detail" id="public-address">
+<section class="service-detail alt" id="public-address">
   <div class="wrap service-detail-inner">
-    <div>
-      <div class="service-num">06</div>
-      <div class="service-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    <div class="service-copy reveal">
+      <span class="service-ghost" aria-hidden="true">06</span>
+      <div class="service-head">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div>
+        <div class="service-num">Service 06</div>
       </div>
       <h2>Public Address Systems</h2>
       <p class="desc">Announcement and paging systems for factories, campuses and public spaces. We plan the speaker layout so announcements are heard clearly across the whole site.</p>
       <a class="enquire-link" href="https://wa.me/919254006241?text=Hi%20TANS%2C%20I%27d%20like%20to%20enquire%20about%20public%20address%20systems." target="_blank" rel="noopener">Enquire about PA systems &rarr;</a>
     </div>
-    <div class="included">
+    <div class="included reveal delay">
       <div class="included-title">What's included</div>
       <ul>
         <li>Announcement and paging systems</li>
@@ -463,22 +542,22 @@
     <span class="eyebrow" style="color:var(--maroon)">How we work</span>
     <h2>Our process</h2>
     <div class="process-steps">
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">01</div>
         <h3>Site visit</h3>
         <p>We come and look at the site before quoting, so the quote matches the actual site.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">02</div>
         <h3>Design &amp; quote</h3>
         <p>You get a clear scope of what we'll install and what it will cost.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">03</div>
         <h3>Install &amp; commission</h3>
         <p>We do the wiring, installation and testing on-site, and hand over a working system.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">04</div>
         <h3>Support</h3>
         <p>We stay reachable after handover. Enquiries typically get a response within 24 hours.</p>
@@ -559,6 +638,83 @@
   function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 8); }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
+
+  // ---- Fade sections in as they scroll into view ----
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var revealer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('in'); revealer.unobserve(entry.target); }
+      });
+    }, { rootMargin:'0px 0px -10% 0px' });
+    reveals.forEach(function(el){ revealer.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // ---- Hero mesh network animation (same as index.html) ----
+  (function(){
+    var canvas = document.getElementById('meshCanvas');
+    var ctx = canvas.getContext('2d');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hero = canvas.parentElement;
+    var nodes = [];
+    var W, H;
+    var colors = ['#1D8A93', '#A32B2B', '#5FD4DB'];
+
+    function resize(){
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+      var count = Math.max(18, Math.floor(W / 90));
+      nodes = [];
+      for(var i=0;i<count;i++){
+        nodes.push({
+          x: Math.random()*W, y: Math.random()*H,
+          vx: (Math.random()-0.5)*0.25, vy: (Math.random()-0.5)*0.25,
+          r: 1.6 + Math.random()*1.6, c: colors[i % colors.length]
+        });
+      }
+    }
+
+    function step(){
+      ctx.clearRect(0,0,W,H);
+      var i, j, n;
+      if(!reduceMotion){
+        for(i=0;i<nodes.length;i++){
+          n = nodes[i];
+          n.x += n.vx; n.y += n.vy;
+          if(n.x<0||n.x>W) n.vx*=-1;
+          if(n.y<0||n.y>H) n.vy*=-1;
+        }
+      }
+      for(i=0;i<nodes.length;i++){
+        for(j=i+1;j<nodes.length;j++){
+          var a=nodes[i], b=nodes[j];
+          var dx=a.x-b.x, dy=a.y-b.y;
+          var dist = Math.sqrt(dx*dx+dy*dy);
+          if(dist < 150){
+            ctx.strokeStyle = 'rgba(95,212,219,' + (0.14 * (1 - dist/150)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+          }
+        }
+      }
+      for(i=0;i<nodes.length;i++){
+        n = nodes[i];
+        ctx.beginPath();
+        ctx.fillStyle = n.c;
+        ctx.globalAlpha = 0.85;
+        ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      if(!reduceMotion){ requestAnimationFrame(step); }
+    }
+
+    resize();
+    step();
+    window.addEventListener('resize', function(){ resize(); if(reduceMotion) step(); });
+  })();
 </script>
 
 </body>
