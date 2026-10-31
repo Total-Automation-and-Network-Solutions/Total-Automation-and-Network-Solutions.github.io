@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="jMcSHC86oQk-fKr9aY0Wbk0309xGXRNzA3ZLtDyJPaw" />
+<title>TANS Panipat | Automation, Networking &amp; IoT Solutions Across India</title>
+<meta name="description" content="Total Automation &amp; Network Solutions (TANS): Panipat-based industrial automation, networking infrastructure, fire alarm, CCTV and IoT-driven software platforms, serving clients across India.">
+<link rel="canonical" href="https://www.tanstechnology.co.in/">
+<link rel="icon" href="assets/logo.png" type="image/png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Total Automation &amp; Network Solutions">
+<meta property="og:title" content="TANS Panipat | Automation, Networking &amp; IoT Solutions Across India">
+<meta property="og:description" content="Panipat-based industrial automation, networking infrastructure, fire alarm, CCTV and IoT-driven software platforms, serving clients across India.">
+<meta property="og:url" content="https://www.tanstechnology.co.in/">
+<meta property="og:image" content="https://www.tanstechnology.co.in/assets/logo.png">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TANS Panipat | Automation, Networking &amp; IoT Solutions Across India">
+<meta name="twitter:description" content="Panipat-based industrial automation, networking infrastructure, fire alarm, CCTV and IoT-driven software platforms, serving clients across India.">
+<meta name="twitter:image" content="https://www.tanstechnology.co.in/assets/logo.png">
+
+<!-- Local business structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Total Automation & Network Solutions",
+  "alternateName": "TANS",
+  "url": "https://www.tanstechnology.co.in/",
+  "image": "https://www.tanstechnology.co.in/assets/logo.png",
+  "telephone": "+91-92540-06241",
+  "email": "sanjaytans@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "519/12, Saini Colony",
+    "addressLocality": "Panipat",
+    "addressRegion": "Haryana",
+    "postalCode": "132103",
+    "addressCountry": "IN"
+  },
+  "areaServed": "IN",
+  "foundingDate": "2011",
+  "description": "Panipat-based industrial automation, networking infrastructure, fire alarm, CCTV, building automation, public address systems and IoT-driven software platforms.",
+  "sameAs": []
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script>document.documentElement.className='js';</script>
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --teal: #1D8A93;
+    --teal-deep: #103F44;
+    --maroon: #A32B2B;
+    --maroon-deep: #6E1E1E;
+    --navy: #0E1B21;
+    --paper: #F5F8F8;
+    --mist: #E4EFEF;
+    --ink: #17262B;
+    --ink-soft: #48585D;
+    --line: #D7E3E3;
+    --white: #FFFFFF;
+
+    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+    --radius-s: 8px;
+    --radius-m: 14px;
+    --radius-l: 22px;
+
+    --container: 1160px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  h1,h2,h3,h4{ font-family:var(--font-display); margin:0; line-height:1.12; letter-spacing:-0.01em; }
+  p{ margin:0; }
+  section{ position:relative; }
+  .wrap{ max-width:var(--container); margin:0 auto; padding:0 28px; }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  :focus-visible{ outline:2.5px solid var(--maroon); outline-offset:3px; border-radius:4px; }
+
+  .btn{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:15px;
+    padding:13px 24px;
+    border-radius:999px;
+    border:1.5px solid transparent;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-whatsapp{
+    background:#25D366;
+    color:#0B2B18;
+    box-shadow:0 8px 20px -8px rgba(37,211,102,0.55);
+  }
+  .btn-whatsapp:hover{ box-shadow:0 12px 26px -8px rgba(37,211,102,0.7); }
+  .btn-ghost{
+    background:transparent;
+    border-color:rgba(255,255,255,0.35);
+    color:var(--white);
+  }
+  .btn-ghost:hover{ border-color:var(--white); background:rgba(255,255,255,0.08); }
+  .btn-solid{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .btn-solid:hover{ background:var(--teal-deep); }
+
+  .badge{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:999px;
+    border:1px solid currentColor;
+    display:inline-block;
+  }
+
+  /* ============ HEADER ============ */
+  .site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(245,248,248,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0;
+  }
+  .site-header.scrolled{ box-shadow:0 8px 24px -16px rgba(14,27,33,0.35); }
+  section[id]{ scroll-margin-top:80px; }
+  .skip-link{
+    position:absolute; left:12px; top:-60px; z-index:300;
+    background:var(--navy); color:var(--white); padding:10px 16px; border-radius:8px; font-size:14px;
+  }
+  .skip-link:focus{ top:12px; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ width:48px; height:48px; border-radius:9px; object-fit:contain; }
+  .brand-name{ font-family:var(--font-display); font-weight:700; font-size:16.5px; line-height:1.15; color:var(--ink); }
+  .brand-name small{ display:block; font-family:var(--font-mono); font-weight:400; font-size:10.5px; letter-spacing:0.06em; color:var(--ink-soft); text-transform:uppercase; margin-top:2px; }
+
+  .nav-links{ display:flex; align-items:center; gap:34px; }
+  .nav-links a{
+    font-size:14.5px; font-weight:500; color:var(--ink-soft);
+    position:relative; padding:4px 0;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:2px;
+    background:var(--maroon); transition:width .2s ease;
+  }
+  .nav-links a:hover, .nav-links a.active{ color:var(--ink); }
+  .nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
+
+  .header-cta{ display:flex; align-items:center; gap:14px; }
+  .header-cta .btn{ padding:10px 18px; font-size:13.5px; }
+
+  .nav-toggle{
+    display:none; background:none; border:none; cursor:pointer;
+    width:40px; height:40px; align-items:center; justify-content:center;
+  }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    content:""; display:block; width:22px; height:2px; background:var(--ink);
+    position:relative; transition:transform .2s ease, opacity .2s ease;
+  }
+  .nav-toggle span::before{ position:absolute; top:-7px; }
+  .nav-toggle span::after{ position:absolute; top:7px; }
+
+  /* ============ HERO ============ */
+  .hero{
+    background:var(--navy);
+    color:var(--white);
+    overflow:hidden;
+    padding:96px 0 84px;
+  }
+  .hero-inner{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;
+    position:relative; z-index:2;
+  }
+  .hero canvas{
+    position:absolute; inset:0; z-index:1; opacity:0.9;
+  }
+  .hero-copy .eyebrow{ color:#5FD4DB; }
+  .hero h1{
+    font-size:clamp(32px, 4.4vw, 50px);
+    margin:20px 0 22px;
+    max-width:640px;
+  }
+  .hero h1 em{ font-style:normal; color:#6FE0E6; }
+  .hero p.lead{
+    font-size:17px; color:#C6D4D6; max-width:520px; margin-bottom:34px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
+
+  .hero-panel{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius-l);
+    padding:26px;
+    font-family:var(--font-mono);
+    backdrop-filter:blur(6px);
+  }
+  .hero-panel-head{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9FB4B6;
+    margin-bottom:18px;
+  }
+  .hero-panel-head .dot{ width:7px; height:7px; border-radius:50%; background:#5FD4DB; display:inline-block; margin-right:7px; box-shadow:0 0 0 3px rgba(95,212,219,0.18); }
+  .telemetry-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:12px 0; border-top:1px dashed rgba(255,255,255,0.14);
+  }
+  .telemetry-row:first-of-type{ border-top:none; }
+  .telemetry-row .label{ font-size:12.5px; color:#9FB4B6; }
+  .telemetry-row .value{ font-size:17px; color:var(--white); font-weight:500; }
+  .telemetry-row .value span{ font-size:11px; color:#6FE0E6; margin-left:4px; }
+
+  /* ============ SECTION HEADS ============ */
+  .section-head{ max-width:620px; margin-bottom:48px; }
+  .section-head h2{ font-size:clamp(26px,3vw,36px); margin-top:16px; }
+  .section-head p{ margin-top:14px; color:var(--ink-soft); font-size:16px; }
+  .section-pad{ padding:88px 0; }
+
+  /* ============ TRANSITION / SPLIT ============ */
+  .split{
+    display:grid; grid-template-columns:1fr 1fr;
+    min-height:520px;
+  }
+  .split-panel{
+    padding:64px 44px;
+    color:var(--white);
+    position:relative;
+    overflow:hidden;
+  }
+  /* soft ring in the corner of each panel */
+  .split-panel::after{
+    content:""; position:absolute; right:-90px; top:-90px;
+    width:260px; height:260px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.16);
+    box-shadow:0 0 0 44px rgba(255,255,255,0.04);
+    pointer-events:none;
+  }
+  /* Line the teal panel's text up with the centred page column: half the page minus half the container (580px) plus the 28px gutter */
+  .split-panel.teal{ background:linear-gradient(160deg, var(--teal) 0%, var(--teal-deep) 100%); padding-left:max(28px, calc(100% - 552px)); }
+  .split-panel.maroon{ background:linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%); }
+  .split-panel .tag{ font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.85; }
+  .split-panel h3{ font-size:26px; margin:16px 0 20px; max-width:440px; }
+  .split-panel ul{ display:flex; flex-direction:column; gap:13px; max-width:460px; }
+  .split-panel li{
+    font-size:15px; padding-left:22px; position:relative; opacity:0.95;
+  }
+  .split-panel li::before{
+    content:""; position:absolute; left:0; top:9px; width:6px; height:6px; border-radius:50%; background:currentColor; opacity:0.8;
+  }
+
+  /* ============ SERVICES ============ */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+  }
+  .service-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-m);
+    padding:30px 24px;
+    position:relative; overflow:hidden; display:block;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* coloured bar that slides in along the top edge on hover */
+  .service-card::before{
+    content:""; position:absolute; left:0; top:0; width:100%; height:3px;
+    background:linear-gradient(90deg, var(--teal), var(--teal-deep));
+    transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  .service-card:nth-child(even)::before{ background:linear-gradient(90deg, var(--maroon), var(--maroon-deep)); }
+  .service-card:hover::before{ transform:scaleX(1); }
+  .service-more{ display:inline-block; margin-top:16px; font-size:13.5px; font-weight:600; color:var(--teal); }
+  .service-card:nth-child(even) .service-more{ color:var(--maroon); }
+  .service-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 22px 40px -22px rgba(14,27,33,0.25);
+    border-color:transparent;
+  }
+  .service-num{
+    font-family:var(--font-mono); font-size:12px; color:var(--teal);
+    margin-bottom:18px;
+  }
+  .service-icon{
+    width:44px; height:44px; border-radius:11px;
+    background:linear-gradient(150deg, var(--teal), var(--teal-deep)); color:var(--white);
+    box-shadow:0 12px 22px -12px rgba(16,63,68,0.75);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+  }
+  .service-card:nth-child(even) .service-icon{
+    background:linear-gradient(150deg, var(--maroon), var(--maroon-deep));
+    box-shadow:0 12px 22px -12px rgba(110,30,30,0.75);
+  }
+  .service-card:nth-child(even) .service-num{ color:var(--maroon); }
+  .service-card h4{ font-size:17.5px; margin-bottom:10px; }
+  .service-card p{ font-size:14.5px; color:var(--ink-soft); }
+
+  /* ============ FLAGSHIP ============ */
+  .flagship{ background:var(--navy); color:var(--white); }
+  .flagship-inner{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+  }
+  .flagship-copy .badge{ color:#6FE0E6; border-color:#6FE0E6; margin-bottom:18px; }
+  .flagship-copy h2{ font-size:clamp(26px,3vw,34px); margin-bottom:16px; }
+  .flagship-copy p.lead{ color:#C6D4D6; font-size:15.5px; margin-bottom:26px; max-width:480px; }
+  .feature-list{ display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; margin-bottom:30px; }
+  .feature-list li{ font-size:14px; color:#DCE7E8; padding-left:20px; position:relative; }
+  .feature-list li::before{
+    content:"✓"; position:absolute; left:0; top:0; color:#5FD4DB; font-size:12px; font-weight:700;
+  }
+
+  .dash-mock{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius-l);
+    padding:22px;
+  }
+  .dash-mock-head{
+    display:flex; align-items:center; gap:8px; margin-bottom:18px;
+  }
+  .dash-mock-head span{ width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.2); }
+  .dash-mock-head .dash-mock-title{ width:auto; height:auto; background:none; border-radius:0; white-space:nowrap; }
+  .dash-mock-title{ margin-left:8px; font-family:var(--font-mono); font-size:12px; color:#9FB4B6; letter-spacing:0.04em; }
+  .dash-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+  .dash-tile{
+    background:rgba(255,255,255,0.045);
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:var(--radius-s);
+    padding:16px;
+  }
+  .dash-tile .k{ font-family:var(--font-mono); font-size:10.5px; color:#8FA5A7; text-transform:uppercase; letter-spacing:0.06em; }
+  .dash-tile .v{ font-family:var(--font-mono); font-size:22px; margin-top:8px; color:var(--white); }
+  .dash-tile .v small{ font-size:11px; color:#6FE0E6; margin-left:3px; }
+  .dash-bar{ height:6px; border-radius:4px; background:rgba(255,255,255,0.09); margin-top:10px; overflow:hidden; }
+  .dash-bar i{ display:block; height:100%; background:linear-gradient(90deg,#5FD4DB,#1D8A93); border-radius:4px; }
+  .dash-mock-foot{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:11px; color:#8FA5A7; margin-top:6px; }
+
+  /* ============ TRUSTED BY ============ */
+  .trusted{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    padding:36px 0;
+    overflow:hidden;
+  }
+  .trusted-label{
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--ink-soft); text-align:center; margin-bottom:22px;
+  }
+  .trusted-viewport{
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+    mask-image:linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+  }
+  .trusted-row{
+    display:flex; align-items:center; gap:48px;
+    width:max-content;
+    animation:trusted-scroll 26s linear infinite;
+  }
+  .trusted:hover .trusted-row{ animation-play-state:paused; }
+  @keyframes trusted-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  .trusted-logo{
+    width:140px; height:56px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .trusted-logo img{
+    max-width:100%; max-height:100%; object-fit:contain;
+    filter:grayscale(100%); opacity:0.7;
+    transition:filter .18s ease, opacity .18s ease;
+  }
+  .trusted-logo img:hover{
+    filter:grayscale(0%); opacity:1;
+  }
+  /* Use this modifier for logos that are white/very light on a transparent background. It inverts them to dark so they're visible on the white section, without a background chip */
+  .trusted-logo--invert img{
+    filter:invert(1) grayscale(100%) opacity(0.75);
+  }
+  .trusted-logo--invert img:hover{
+    filter:invert(1) grayscale(0%) opacity(1);
+  }
+
+  .stats{
+    background:var(--mist);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .stats-row{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    padding:44px 28px;
+  }
+  .stat{ text-align:left; padding:0 20px; border-left:1px solid var(--line); }
+  .stat:first-child{ border-left:none; padding-left:0; }
+  .stat .v{ font-family:var(--font-display); font-weight:700; font-size:30px; color:var(--teal-deep); }
+  .stat .l{ font-size:13px; color:var(--ink-soft); margin-top:6px; }
+
+  /* ============ CONTACT ============ */
+  .contact-inner{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:0;
+    border-radius:var(--radius-l);
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .contact-left{
+    background:var(--navy); color:var(--white);
+    padding:56px 48px;
+  }
+  .contact-left .eyebrow{ color:#5FD4DB; }
+  .contact-left h2{ font-size:clamp(24px,2.8vw,32px); margin:16px 0 14px; max-width:420px; }
+  .contact-left p{ color:#C6D4D6; font-size:15px; max-width:420px; margin-bottom:30px; }
+  .contact-right{
+    background:var(--white); padding:40px 48px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .contact-field{
+    display:flex; align-items:flex-start; gap:16px;
+    padding:22px 0; border-top:1px solid var(--line);
+  }
+  .contact-field:first-child{ border-top:none; }
+  .contact-icon{
+    width:42px; height:42px; border-radius:11px; flex-shrink:0;
+    background:var(--mist); color:var(--teal-deep);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .contact-field .v{ display:block; line-height:1.5; }
+  .contact-link{ display:inline-block; margin-top:8px; font-size:13.5px; font-weight:600; color:var(--teal); }
+  .contact-link:hover{ color:var(--maroon); }
+  .contact-field .k{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); margin-bottom:6px; }
+  .contact-field .v{ font-size:15.5px; font-weight:500; }
+  .contact-field a.v:hover{ color:var(--maroon); }
+
+  /* ============ FOOTER ============ */
+  .site-footer{ background:var(--navy); color:#9FB4B6; padding:40px 0; }
+  .footer-row{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px;
+  }
+  .footer-brand{ display:flex; align-items:center; gap:10px; color:var(--white); font-family:var(--font-display); font-weight:600; font-size:14.5px; }
+  .footer-brand img{ width:34px; height:34px; border-radius:6px; object-fit:contain; }
+  .footer-links{ display:flex; gap:24px; font-size:13.5px; }
+  .footer-links a:hover{ color:var(--white); }
+  .footer-fine{ font-size:12.5px; color:#6C8082; margin-top:20px; text-align:center; }
+
+  /* ============ FLOATING WHATSAPP ============ */
+  .wa-float{
+    position:fixed; right:20px; bottom:20px; z-index:200;
+    width:56px; height:56px; border-radius:50%;
+    background:#25D366; color:#0B2B18;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,0.35);
+    transition:transform .15s ease;
+  }
+  .wa-float:hover{ transform:scale(1.08); }
+
+  /* ============ MOBILE NAV OVERLAY ============ */
+  .mobile-nav{
+    position:fixed; inset:0; background:var(--navy); z-index:150;
+    display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+    padding:40px;
+    transform:translateY(-100%); visibility:hidden;
+    transition:transform .28s ease, visibility 0s linear .28s;
+  }
+  .mobile-nav.open{ transform:translateY(0); visibility:visible; transition:transform .28s ease, visibility 0s; }
+  body.nav-open{ overflow:hidden; }
+  .mobile-nav a{ color:var(--white); font-family:var(--font-display); font-size:26px; font-weight:600; padding:14px 0; }
+  .mobile-nav .btn{ margin-top:20px; }
+  .mobile-close{ position:absolute; top:22px; right:24px; background:none; border:none; color:var(--white); font-size:26px; cursor:pointer; }
+
+  /* ============ SCROLL REVEAL ============ */
+  .js .reveal{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .js .reveal.in{ opacity:1; transform:none; }
+  .js .reveal.delay{ transition-delay:.12s; }
+  /* service cards appear one after another across each row */
+  .js .services-grid .reveal:nth-child(3n+2){ transition-delay:.08s; }
+  .js .services-grid .reveal:nth-child(3n){ transition-delay:.16s; }
+  /* the bars in the dashboard mockup grow as it appears */
+  .js .reveal .dash-bar i{ transform:scaleX(0); transform-origin:left; transition:transform .7s ease .2s; }
+  .js .reveal.in .dash-bar i{ transform:scaleX(1); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .nav-links, .header-cta{ display:none; }
+    .nav-toggle{ display:flex; }
+    .hero-inner{ grid-template-columns:1fr; }
+    .hero-panel{ max-width:440px; }
+    .split{ grid-template-columns:1fr; min-height:auto; }
+    .split-panel.teal{ padding-left:28px; }
+    .split-panel.maroon{ padding-left:28px; }
+    .services-grid{ grid-template-columns:1fr 1fr; }
+    .flagship-inner{ grid-template-columns:1fr; }
+    .stats-row{ grid-template-columns:1fr 1fr; row-gap:26px; }
+    .stat:nth-child(3){ border-left:none; }
+    .contact-inner{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 640px){
+    .section-pad{ padding:64px 0; }
+    .services-grid{ grid-template-columns:1fr; }
+    .hero{ padding:70px 0 56px; }
+    .split-panel{ padding:48px 28px; }
+    .contact-left, .contact-right{ padding:40px 26px; }
+    .stats-row{ grid-template-columns:1fr 1fr; }
+    .feature-list{ grid-template-columns:1fr; }
+    .footer-row{ flex-direction:column; align-items:flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .btn:hover{ transform:none; }
+    .trusted-row{ animation:none; }
+    .js .reveal{ opacity:1; transform:none; transition:none; }
+    .js .reveal .dash-bar i{ transform:none; transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-row">
+    <a href="#top" class="brand" aria-label="TANS home">
+      <img src="assets/logo.png" alt="" width="48" height="48">
+      <span class="brand-name">TANS<small>Automation &amp; Network Solutions</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="services.html">Services</a>
+      <a href="#platform">Platform</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hello%20TANS%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">
+        WhatsApp Enquiry
+      </a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav" id="navToggle"><span></span></button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="#about">About</a>
+  <a href="services.html">Services</a>
+  <a href="#platform">Platform</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:+919254006241">Call +91 92540 06241</a>
+  <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hello%20TANS%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <canvas id="meshCanvas" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Since 2011</span>
+      <h1>Reliable automation and safety systems for industry and commercial buildings</h1>
+      <p class="lead">Fire alarm, CCTV, building automation and public address systems, installed and supported from our base in Panipat since 2011.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hello%20TANS%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        <a class="btn btn-ghost" href="#platform">View our smart meter platform &rarr;</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hero-panel-head"><span><span class="dot"></span>Smart meter platform</span> PREVIEW</div>
+      <div class="telemetry-row"><span class="label">Site A / Meter 014</span><span class="value">231.4<span>kWh</span></span></div>
+      <div class="telemetry-row"><span class="label">Site A / Meter 022</span><span class="value">118.9<span>kWh</span></span></div>
+      <div class="telemetry-row"><span class="label">Relay status</span><span class="value">ON<span>auto</span></span></div>
+      <div class="telemetry-row"><span class="label">Connected sites</span><span class="value">03<span>active</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUSTED BY ============ -->
+<section class="trusted">
+  <div class="wrap">
+    <div class="trusted-label">Companies we have worked with</div>
+    <div class="trusted-viewport">
+      <div class="trusted-row">
+        <!-- List is duplicated below for a seamless loop, so keep both copies identical. -->
+        <div class="trusted-logo"><img src="assets/clients/siemens.png" alt="Siemens" width="140" height="56"></div>
+        <div class="trusted-logo trusted-logo--invert"><img src="assets/clients/lt.svg" alt="L&amp;T" width="140" height="56"></div>
+        <div class="trusted-logo"><img src="assets/clients/honeywell.png" alt="Honeywell" width="140" height="56"></div>
+        <div class="trusted-logo"><img src="assets/clients/ivl-dhunseri.png" alt="IVL Dhunseri" width="140" height="56"></div>
+        <div class="trusted-logo" aria-hidden="true"><img src="assets/clients/siemens.png" alt="" width="140" height="56"></div>
+        <div class="trusted-logo trusted-logo--invert" aria-hidden="true"><img src="assets/clients/lt.svg" alt="" width="140" height="56"></div>
+        <div class="trusted-logo" aria-hidden="true"><img src="assets/clients/honeywell.png" alt="" width="140" height="56"></div>
+        <div class="trusted-logo" aria-hidden="true"><img src="assets/clients/ivl-dhunseri.png" alt="" width="140" height="56"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / TRANSITION ============ -->
+<section id="about">
+  <div class="wrap" style="padding-top:64px;">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--teal)">About us</span>
+      <h2>15 years of automation and installation experience</h2>
+      <p>TANS began with PLC panel wiring and industrial cabling, and on-site installation remains the core of our work. Over time, we recognised that the systems we install generate valuable operational data that often goes unused. This insight now guides our investment in connected monitoring solutions.</p>
+      <p>Our smart meter platform is being developed alongside our core services and does not replace them.</p>
+    </div>
+  </div>
+  <div class="split">
+    <div class="split-panel teal reveal">
+      <span class="tag">Core services</span>
+      <h3>Installation, integration and on-site support</h3>
+      <ul>
+        <li>Fire alarm, CCTV, public address &amp; building automation systems</li>
+        <li>Panel wiring, PLC &amp; relay-based control systems</li>
+        <li>System integration and on-site support</li>
+        <li>2023: Restructured as Total Automation &amp; Network Solutions</li>
+      </ul>
+    </div>
+    <div class="split-panel maroon reveal delay">
+      <span class="tag">In development</span>
+      <h3>An in-house IoT monitoring platform</h3>
+      <ul>
+        <li>2026: Development of our smart meter platform began</li>
+        <li>Connected sensors and meters reporting real-time data</li>
+        <li>Cloud dashboards for multi-site operations</li>
+        <li>Continued investment in our team and new products</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section-pad" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--maroon)">What we do</span>
+      <h2>Our services</h2>
+      <p>The systems we design, install and support, along with the platform currently in development.</p>
+      <a class="contact-link" href="services.html">View all services &rarr;</a>
+    </div>
+    <div class="services-grid">
+      <a class="service-card reveal" href="services.html#building-automation">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+        </div>
+        <h4>Building Automation</h4>
+        <p>PLC &amp; relay-based control panels, process automation and on-site commissioning for plants and facilities.</p>
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#software">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13l-6 4M12 13l6 4"/></svg>
+        </div>
+        <h4>Software Customization</h4>
+        <p>Custom dashboards and business software, built in-house around the way your team works.</p>
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#iot">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M10 21h4"/></svg>
+        </div>
+        <h4>IoT Devices</h4>
+        <p>Connected sensors and smart meters that send live readings straight to your dashboard.</p>
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#fire-alarm">
+        <div class="service-num">04</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+        </div>
+        <h4>Fire Alarm Systems</h4>
+        <p>Detection, alarm panels and monitoring systems designed and installed to protect buildings and people.</p>
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#cctv">
+        <div class="service-num">05</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <h4>CCTV Surveillance Systems</h4>
+        <p>Camera systems, NVR setup and remote monitoring for factories, offices and multi-site operations.</p>
+        <span class="service-more">View details &rarr;</span>
+      </a>
+      <a class="service-card reveal" href="services.html#public-address">
+        <div class="service-num">06</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </div>
+        <h4>Public Address Systems</h4>
+        <p>Announcement and paging systems for factories, campuses and public spaces, built for clear, reliable coverage.</p>
+        <span class="service-more">View details &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLAGSHIP: SMART METER PLATFORM ============ -->
+<section class="section-pad flagship" id="platform">
+  <div class="wrap flagship-inner">
+    <div class="flagship-copy reveal">
+      <span class="badge">In development, not yet live</span>
+      <h2>Smart meter platform for multi-site operations</h2>
+      <p class="lead">A single dashboard for every site. Operators can monitor live consumption, control relays remotely and manage prepaid recharges, with each client's data kept fully separate. The platform is being developed in-house and is not yet available for live demonstration. We welcome early discussions with operators interested in shaping its development.</p>
+      <ul class="feature-list">
+        <li>Real-time meter readings</li>
+        <li>Remote relay on/off control</li>
+        <li>Prepaid recharge and coupon management</li>
+        <li>Separate access for each client and team member</li>
+        <li>Full audit trail on every action</li>
+        <li>Built for multiple sites</li>
+      </ul>
+      <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hello%20TANS%2C%20I%20would%20like%20to%20register%20interest%20in%20the%20smart%20meter%20platform." target="_blank" rel="noopener">Register early interest</a>
+    </div>
+    <div class="flagship-visual reveal delay">
+    <div class="dash-mock" aria-hidden="true">
+      <div class="dash-mock-head">
+        <span></span><span></span><span></span>
+        <span class="dash-mock-title">SITE OVERVIEW (PREVIEW)</span>
+      </div>
+      <div class="dash-grid">
+        <div class="dash-tile">
+          <div class="k">Total load</div>
+          <div class="v">18.6<small>kW</small></div>
+          <div class="dash-bar"><i style="width:62%"></i></div>
+        </div>
+        <div class="dash-tile">
+          <div class="k">Active meters</div>
+          <div class="v">47<small>/50</small></div>
+          <div class="dash-bar"><i style="width:94%"></i></div>
+        </div>
+        <div class="dash-tile">
+          <div class="k">Recharges today</div>
+          <div class="v">12</div>
+          <div class="dash-bar"><i style="width:40%"></i></div>
+        </div>
+        <div class="dash-tile">
+          <div class="k">Uptime</div>
+          <div class="v">99.2<small>%</small></div>
+          <div class="dash-bar"><i style="width:99%"></i></div>
+        </div>
+      </div>
+      <div class="dash-mock-foot"><span>Sample data</span><span>Illustrative only</span></div>
+    </div>
+    <p style="font-family:var(--font-mono); font-size:11px; color:#6C8082; text-align:center; margin-top:10px;">Illustrative mockup. The platform is currently in development.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="wrap stats-row reveal">
+    <div class="stat"><div class="v">2011</div><div class="l">Year we were established</div></div>
+    <div class="stat"><div class="v">15 years</div><div class="l">Installing and supporting systems on-site</div></div>
+    <div class="stat"><div class="v">06</div><div class="l">Core service areas</div></div>
+    <div class="stat"><div class="v">24 hours</div><div class="l">Typical response time to enquiries</div></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section-pad" id="contact">
+  <div class="wrap">
+    <div class="contact-inner reveal">
+      <div class="contact-left">
+        <span class="eyebrow">Contact</span>
+        <h2>Discuss your requirements with us</h2>
+        <p>For fire alarm, CCTV, building automation or public address requirements, or to register interest in our platform, contact us by WhatsApp, phone or email. We typically respond within 24 hours.</p>
+        <a class="btn btn-whatsapp" href="https://wa.me/919254006241?text=Hello%20TANS%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">Message us on WhatsApp</a>
+      </div>
+      <div class="contact-right">
+        <div class="contact-field">
+          <span class="contact-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div>
+            <div class="k">Email</div>
+            <a class="v" href="mailto:sanjaytans@gmail.com">sanjaytans@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-field">
+          <span class="contact-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div>
+            <div class="k">Phone</div>
+            <a class="v" href="tel:+919254006241">+91 92540 06241</a>
+          </div>
+        </div>
+        <div class="contact-field">
+          <span class="contact-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div>
+            <div class="k">Office</div>
+            <span class="v">519/12, Saini Colony<br>Panipat, Haryana 132103</span>
+            <a class="contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=519%2F12%20Saini%20Colony%20Panipat%20Haryana%20132103" target="_blank" rel="noopener">Get directions &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <a href="#top" class="footer-brand">
+        <img src="assets/logo.png" alt="TANS logo">
+        Total Automation &amp; Network Solutions
+      </a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="services.html">Services</a>
+        <a href="#platform">Platform</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-fine">519/12, Saini Colony, Panipat, Haryana - 132103 &nbsp;|&nbsp; <a href="tel:+919254006241">+91 92540 06241</a> &nbsp;|&nbsp; <a href="mailto:sanjaytans@gmail.com">sanjaytans@gmail.com</a></div>
+    <div class="footer-fine">GSTIN: 06BGQPJ7989G1ZL &nbsp;|&nbsp; Established 2011</div>
+    <div class="footer-fine">&copy; <span id="year"></span> Total Automation &amp; Network Solutions. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919254006241?text=Hello%20TANS%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#0B2B18"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2zm5.6 14.32c-.24.67-1.4 1.29-1.93 1.33-.5.05-1.02.24-3.42-.72-2.9-1.16-4.76-4.15-4.9-4.34-.14-.19-1.17-1.56-1.17-2.98 0-1.42.75-2.11 1.02-2.4.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.83.91-1.12.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.14.48.21.55.33.07.12.07.7-.17 1.37z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var toggle = document.getElementById('navToggle');
+  var mnav = document.getElementById('mobileNav');
+  var mclose = document.getElementById('mobileClose');
+  function openNav(){
+    mnav.classList.add('open');
+    document.body.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    mclose.focus();
+  }
+  function closeNav(returnFocus){
+    mnav.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if(returnFocus) toggle.focus();
+  }
+  toggle.addEventListener('click', openNav);
+  mclose.addEventListener('click', function(){ closeNav(true); });
+  mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeNav(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mnav.classList.contains('open')) closeNav(true);
+  });
+
+  // ---- Header shadow once the page is scrolled ----
+  var header = document.getElementById('siteHeader');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // ---- Highlight the nav link of the section currently on screen ----
+  var navLinks = document.querySelectorAll('.nav-links a');
+  if('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        navLinks.forEach(function(link){
+          var on = link.getAttribute('href') === '#' + entry.target.id;
+          link.classList.toggle('active', on);
+          if(on) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    ['top','about','services','platform','contact'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) spy.observe(el);
+    });
+  }
+
+  // ---- Fade sections in as they scroll into view ----
+  var reveals = document.querySelectorAll('.reveal');
+  function show(el){
+    el.classList.add('in');
+    // once the animation is over, drop the helper classes so hover effects work normally again
+    setTimeout(function(){ el.classList.remove('reveal', 'in', 'delay'); }, 1200);
+  }
+  if('IntersectionObserver' in window){
+    var revealer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ show(entry.target); revealer.unobserve(entry.target); }
+      });
+    }, { rootMargin:'0px 0px -10% 0px' });
+    reveals.forEach(function(el){ revealer.observe(el); });
+  } else {
+    reveals.forEach(show);
+  }
+
+  // ---- Hero mesh network animation ----
+  (function(){
+    var canvas = document.getElementById('meshCanvas');
+    var ctx = canvas.getContext('2d');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hero = canvas.parentElement;
+    var nodes = [];
+    var W, H;
+    var visible = true, running = !reduceMotion; // is the hero on screen? is the loop going?
+    var colors = ['#1D8A93', '#A32B2B', '#5FD4DB'];
+
+    function resize(){
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+      var count = Math.max(18, Math.floor(W / 90));
+      nodes = [];
+      for(var i=0;i<count;i++){
+        nodes.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          vx: (Math.random()-0.5)*0.25,
+          vy: (Math.random()-0.5)*0.25,
+          r: 1.6 + Math.random()*1.6,
+          c: colors[i % colors.length]
+        });
+      }
+    }
+
+    function step(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<nodes.length;i++){
+        var n = nodes[i];
+        if(!reduceMotion){
+          n.x += n.vx; n.y += n.vy;
+          if(n.x<0||n.x>W) n.vx*=-1;
+          if(n.y<0||n.y>H) n.vy*=-1;
+        }
+      }
+      for(var i=0;i<nodes.length;i++){
+        for(var j=i+1;j<nodes.length;j++){
+          var a=nodes[i], b=nodes[j];
+          var dx=a.x-b.x, dy=a.y-b.y;
+          var dist = Math.sqrt(dx*dx+dy*dy);
+          if(dist < 150){
+            ctx.strokeStyle = 'rgba(95,212,219,' + (0.14 * (1 - dist/150)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x,a.y);
+            ctx.lineTo(b.x,b.y);
+            ctx.stroke();
+          }
+        }
+      }
+      for(var i=0;i<nodes.length;i++){
+        var n = nodes[i];
+        ctx.beginPath();
+        ctx.fillStyle = n.c;
+        ctx.globalAlpha = 0.85;
+        ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      if(!reduceMotion && visible){ requestAnimationFrame(step); } else { running = false; }
+    }
+
+    resize();
+    step();
+    // Phones fire 'resize' when the address bar hides on scroll (only the height changes).
+    // Rebuild the dots only when the width really changes, so they don't jump around.
+    window.addEventListener('resize', function(){
+      if(hero.offsetWidth === W) return;
+      resize(); if(reduceMotion) step();
+    });
+
+    // Pause the animation while the hero is off screen, to save battery.
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(entries){
+        visible = entries[0].isIntersecting;
+        if(visible && !running && !reduceMotion){ running = true; requestAnimationFrame(step); }
+      }).observe(hero);
+    }
+  })();
+</script>
+
+</body>
+</html>
